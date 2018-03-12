@@ -25,7 +25,8 @@ public class InventoryServiceV1 {
     @Autowired
     Session neo4jTemplate;
 
-    @HystrixCommand(fallbackMethod = "getProductFallback")
+    //@HystrixCommand(fallbackMethod = "getProductFallback")
+    //@HystrixCommand
     public Product getProduct(String productId) {
         Product product = productRepository.getProductByProductId(productId);
         if(product != null) {
